@@ -200,7 +200,7 @@
         "multi": false
       },
       {
-        "component": "reference",
+        "component": "text",
         "name": "link",
         "value": "",
         "label": "Text",
