@@ -23,7 +23,10 @@ export function updateButtons(activeSlide) {
         const anchor = document.createElement('a');
         anchor.href = linkText; // Replace with the desired link
         anchor.textContent = 'Explore'; // Set the anchor text
-        carouselText.replaceWith(anchor); // Replace the text element with the anchor
+         // Replace the text element with the anchor
+        carouselText.innerHTML = ''; // Clear the existing content
+        carouselText.appendChild(anchor); // Append the anchor to the carouse
+
       }
 
 
