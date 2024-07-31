@@ -201,6 +201,7 @@
       },
       {
         "component": "text",
+        
         "name": "link",
         "value": "",
         "label": "Text",

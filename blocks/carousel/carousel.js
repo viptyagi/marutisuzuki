@@ -17,6 +17,19 @@ export function updateButtons(activeSlide) {
       });
       const carouselText = row.querySelector('.carousel-text');
       if (!carouselText.innerText.trim()) carouselText.remove();
+
+      else {
+        const linkText = carouselText.textContent; // Extract the text content
+        const anchor = document.createElement('a');
+        anchor.href = linkText; // Replace with the desired link
+        anchor.textContent = 'Explore'; // Set the anchor text
+        carouselText.replaceWith(anchor); // Replace the text element with the anchor
+      }
+
+
+
+
+
       /* buttons */
       const button = document.createElement('button');
       button.title = 'Carousel Nav';
