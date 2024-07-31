@@ -41,7 +41,7 @@ main .carousel-container {
   main .carousel div.carousel-text {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: white;
+    /* background-color: white; */
     min-height: 188px;
     padding: 0 28px;
   }
@@ -91,4 +91,13 @@ main .carousel-container {
   
   main .carousel-wrapper > :last-child button.selected {
     background-color: var(--link-color);
+  }
+
+  .carousel-text a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f0f0f0; /* Adjust background color as needed */
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333; /* Adjust text color as needed */
   }
