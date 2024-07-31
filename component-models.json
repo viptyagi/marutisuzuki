@@ -200,12 +200,13 @@
         "multi": false
       },
       {
-        "component": "richtext",
-        "name": "text",
+        "component": "reference",
+        "name": "link",
         "value": "",
         "label": "Text",
         "valueType": "string"
       }
     ]
   }
+
 ]
