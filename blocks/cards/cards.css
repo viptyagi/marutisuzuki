@@ -31,12 +31,14 @@
 
 .cards > ul > li img {
   width: 2rem;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
 }
 
 .section .cards-wrapper{
   max-width: none;
+}
+
+.section.cards-container {
+  padding: 32px;
 }
 
 .cards-container {
