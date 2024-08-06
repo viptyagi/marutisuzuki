@@ -185,29 +185,7 @@
         "valueType": "string"
       }
     ]
-  },
-
-
-
-  {
-    "id": "slide",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        
-        "name": "link",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-    ]
   }
+  
 
 ]
