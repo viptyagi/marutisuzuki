@@ -2,13 +2,13 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
-  grid-gap: 16px;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
 }
 
 .cards > ul > li {
-  border: 1px solid var(--dark-color);
+  border-inline-end: 1px solid var(--dark-color);
   background-color: var(--background-color);
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
 }
 
 .cards .cards-card-body {
-  margin: 16px;
+  font-size: 16px;
 }
 
 .cards .cards-card-image {
@@ -30,13 +30,13 @@
 }
 
 .cards > ul > li img {
-  width: 100%;
+  width: 2rem;
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
-.cards-wrapper{
-  max-width: none !important;
+.section .cards-wrapper{
+  max-width: none;
 }
 
 .cards-container {
