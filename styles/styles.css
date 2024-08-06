@@ -155,20 +155,22 @@ button {
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
+  background-color: rgb(0 0 0);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
 }
 
 a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: rgb(250 250 250);
   cursor: pointer;
+  color: rgb(0 0 0);
+  border-width: 1px;
+  border-color: rgb(0 0 0);
 }
 
 button:disabled,
