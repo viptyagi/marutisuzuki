@@ -17,7 +17,6 @@ export function updateButtons(activeSlide) {
       });
       const carouselText = row.querySelector('.carousel-text');
       if (!carouselText.innerText.trim()) carouselText.remove();
-
       else {
         const linkText = carouselText.textContent; // Extract the text content
         const anchor = document.createElement('a');
@@ -26,12 +25,7 @@ export function updateButtons(activeSlide) {
          // Replace the text element with the anchor
         carouselText.innerHTML = ''; // Clear the existing content
         carouselText.appendChild(anchor); // Append the anchor to the carouse
-
       }
- 
-  
-
-
       /* buttons */
       const button = document.createElement('button');
       button.title = 'Carousel Nav';
