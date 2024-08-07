@@ -41,6 +41,14 @@
   padding: 32px;
 }
 
+.section .default-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+
 .cards-container {
   box-shadow: 10px 10px 10px 10px grey;
   padding: 32px;
