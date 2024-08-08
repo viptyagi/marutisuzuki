@@ -1,0 +1,48 @@
+/* Video Container Styling */
+.video-container {
+    position: relative;
+    max-width: 100%;
+    max-height: 80vh;
+    background-color: #000;
+    border: 2px solid #fff;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Video Element Styling */
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Custom Controls Styling */
+.custom-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.custom-controls button {
+    background-color: #333;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-controls button:hover {
+    background-color: #555;
+}
+
+.custom-controls button:disabled {
+    background-color: #777;
+    cursor: not-allowed;
+}
