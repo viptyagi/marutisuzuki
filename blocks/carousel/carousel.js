@@ -1,49 +1,139 @@
-export function updateButtons(activeSlide) {
-    const block = activeSlide.closest('.block');
-    const buttons = block.closest('.carousel-wrapper').querySelector('.carousel-buttons');
-    const nthSlide = activeSlide.offsetLeft / activeSlide.parentNode.clientWidth;
-    const button = block.parentElement.querySelector(`.carousel-buttons > button:nth-child(${nthSlide + 1})`);
-    [...buttons.children].forEach((r) => r.classList.remove('selected'));
-    button.classList.add('selected');
-}
+export function decorateVideoBlock(block) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-export default function decorate(block) {
-    const buttons = document.createElement('div');
-    [...block.children].forEach((row, i) => {
-        const classes = ['image', 'text'];
-        classes.forEach((e, j) => {
-            row.children[j].classList.add(`carousel-${e}`);
+    const embedYoutube = (url, autoplay, background) => {
+      const usp = new URLSearchParams(url.search);
+      let suffix = '';
+      if (background || autoplay) {
+        const suffixParams = {
+          autoplay: autoplay ? '1' : '0',
+          mute: background ? '1' : '0',
+          controls: background ? '0' : '1',
+          disablekb: background ? '1' : '0',
+          loop: background ? '1' : '0',
+          playsinline: background ? '1' : '0',
+        };
+        suffix = `&${Object.entries(suffixParams).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&')}`;
+      }
+      let vid = usp.get('v') ? encodeURIComponent(usp.get('v')) : '';
+      const embed = url.pathname;
+      if (url.origin.includes('youtu.be')) {
+        [, vid] = url.pathname.split('/');
+      }
+
+      const temp = document.createElement('div');
+      temp.innerHTML = `<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
+          <iframe src="https://www.youtube.com${vid ? `/embed/${vid}?rel=0&v=${vid}${suffix}` : embed}" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;"
+          allow="autoplay; fullscreen; picture-in-picture; encrypted-media; accelerometer; gyroscope; picture-in-picture" allowfullscreen="" scrolling="no" title="Content from Youtube" loading="lazy"></iframe>
+        </div>`;
+      return temp.children.item(0);
+    };
+
+    const embedVimeo = (url, autoplay, background) => {
+      const [, video] = url.pathname.split('/');
+      let suffix = '';
+      if (background || autoplay) {
+        const suffixParams = {
+          autoplay: autoplay ? '1' : '0',
+          background: background ? '1' : '0',
+        };
+        suffix = `?${Object.entries(suffixParams).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&')}`;
+      }
+      const temp = document.createElement('div');
+      temp.innerHTML = `<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
+          <iframe src="https://player.vimeo.com/video/${video}${suffix}"
+          style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;"
+          frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+          title="Content from Vimeo" loading="lazy"></iframe>
+        </div>`;
+      return temp.children.item(0);
+    };
+
+    const getVideoElement = (source, autoplay, background) => {
+      const video = document.createElement('video');
+      video.setAttribute('controls', '');
+      if (autoplay) video.setAttribute('autoplay', '');
+      if (background) {
+        video.setAttribute('loop', '');
+        video.setAttribute('playsinline', '');
+        video.removeAttribute('controls');
+        video.addEventListener('canplay', () => {
+          video.muted = true;
+          if (autoplay) video.play();
         });
-        const carouselText = row.querySelector('.carousel-text');
-        if (!carouselText.innerText.trim()) carouselText.remove();
-        else {
-            const linkText = carouselText.textContent; // Extract the text content
-            const anchor = document.createElement('a');
-            anchor.href = linkText; // Replace with the desired link
-            anchor.textContent = 'Explore'; // Set the anchor text
-            // Replace the text element with the anchor
-            carouselText.innerHTML = ''; // Clear the existing content
-            carouselText.appendChild(anchor); // Append the anchor to the carouse
+      }
+
+      const sourceEl = document.createElement('source');
+      sourceEl.setAttribute('src', source);
+      sourceEl.setAttribute('type', `video/${source.split('.').pop()}`);
+      video.append(sourceEl);
+
+      return video;
+    };
+
+    const loadVideoEmbed = (block, link, autoplay, background) => {
+      if (block.dataset.embedLoaded === 'true') {
+        return;
+      }
+      const url = new URL(link);
+
+      const isYoutube = link.includes('youtube') || link.includes('youtu.be');
+      const isVimeo = link.includes('vimeo');
+
+      if (isYoutube) {
+        const embedWrapper = embedYoutube(url, autoplay, background);
+        block.append(embedWrapper);
+        embedWrapper.querySelector('iframe').addEventListener('load', () => {
+          block.dataset.embedLoaded = true;
+        });
+      } else if (isVimeo) {
+        const embedWrapper = embedVimeo(url, autoplay, background);
+        block.append(embedWrapper);
+        embedWrapper.querySelector('iframe').addEventListener('load', () => {
+          block.dataset.embedLoaded = true;
+        });
+      } else {
+        const videoEl = getVideoElement(link, autoplay, background);
+        block.append(videoEl);
+        videoEl.addEventListener('canplay', () => {
+          block.dataset.embedLoaded = true;
+        });
+      }
+    };
+
+    const placeholder = block.querySelector('picture');
+    const link = block.querySelector('a').href;
+    block.textContent = '';
+    block.dataset.embedLoaded = false;
+
+    const autoplay = block.classList.contains('autoplay');
+    if (placeholder) {
+      block.classList.add('placeholder');
+      const wrapper = document.createElement('div');
+      wrapper.className = 'video-placeholder';
+      wrapper.append(placeholder);
+
+      if (!autoplay) {
+        wrapper.insertAdjacentHTML(
+          'beforeend',
+          '<div class="video-placeholder-play"><button type="button" title="Play"></button></div>',
+        );
+        wrapper.addEventListener('click', () => {
+          wrapper.remove();
+          loadVideoEmbed(block, link, true, false);
+        });
+      }
+      block.append(wrapper);
+    }
+
+    if (!placeholder || autoplay) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          observer.disconnect();
+          const playOnLoad = autoplay && !prefersReducedMotion.matches;
+          loadVideoEmbed(block, link, playOnLoad, autoplay);
         }
-        /* buttons */
-        const button = document.createElement('button');
-        button.title = 'Carousel Nav';
-        if (!i) button.classList.add('selected');
-        button.addEventListener('click', () => {
-            block.scrollTo({ top: 0, left: row.offsetLeft - row.parentNode.offsetLeft, behavior: 'smooth' });
-            [...buttons.children].forEach((r) => r.classList.remove('selected'));
-            button.classList.add('selected');
-        });
-        buttons.append(button);
-    });
-    if (block.nextElementSibling) block.nextElementSibling.replaceWith(buttons);
-    else block.parentElement.append(buttons);
-
-    block.querySelectorAll(':scope > div').forEach((slide) => slide.classList.add('slide'));
-
-    block.addEventListener('scrollend', () => {
-        const activeElement = Math.round(block.scrollLeft / block.children[0].clientWidth);
-        const slide = block.children[activeElement];
-        updateButtons(slide);
-    }, { passive: true });
-}
+      });
+      observer.observe(block);
+    }
+  }
