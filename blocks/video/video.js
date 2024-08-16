@@ -3,15 +3,15 @@ export function decorateVideoBlock(block) {
 
     const embedYoutube = (url, autoplay, background) => {
       const usp = new URLSearchParams(url.search);
-      let suffix = "";
+      let suffix = '';
       if (background || autoplay) {
         const suffixParams = {
-          autoplay: autoplay ? "1" : "0",
-          mute: background ? "1" : "0",
-          controls: background ? "0" : "1",
-          disablekb: background ? "1" : "0",
-          loop: background ? "1" : "0",
-          playsinline: background ? "1" : "0",
+          autoplay: autoplay ? '1' : '0',
+          mute: background ? '1' : '0',
+          controls: background ? '0' : '1',
+          disablekb: background ? '1' : '0',
+          loop: background ? '1' : '0',
+          playsinline: background ? '1' : '0',
         };
         suffix = `&${Object.entries(suffixParams)
           .map(([k, v]) => `${k}=${encodeURIComponent(v)}`)
