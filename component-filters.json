@@ -50,8 +50,7 @@
   {
     "id": "cars",
     "components": [
-      "button",
-      "card"
+      "button"
     ]
   }
 ]

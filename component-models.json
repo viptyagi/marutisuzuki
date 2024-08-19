@@ -230,16 +230,16 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
-        "label": "Image",
+        "name": "modelImage",
+        "label": "Model Image",
         "multi": false
       },
       {
-        "component": "text",
-        "name": "modelName",
-        "value": "",
-        "label": "Model Name",
-        "valueType": "string"
+        "component": "reference",
+        "valueType": "string",
+        "name": "modelNameLogo",
+        "label": "Model Name Logo",
+        "multi": false
       },
       {
         "component": "text",
