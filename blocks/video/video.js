@@ -70,7 +70,7 @@ export default function decorateVideoBlock(block) {
 
         const sourceEl = document.createElement('source');
         sourceEl.setAttribute('src', source);
-        sourceEl.setAttribute('type', `video/${source.split(".").pop()}`);
+        sourceEl.setAttribute('type', `video/${source.split('.').pop()}`);
         video.append(sourceEl);
 
         return video;
@@ -89,19 +89,19 @@ export default function decorateVideoBlock(block) {
             const embedWrapper = embedYoutube(url, autoplay, background);
             blockElement.append(embedWrapper);
             embedWrapper.querySelector('iframe').addEventListener('load', () => {
-                blockElement.dataset.embedLoaded = true;
+                blockElement.dataset.embedLoaded = 'true';
             });
         } else if (isVimeo) {
             const embedWrapper = embedVimeo(url, autoplay, background);
             blockElement.append(embedWrapper);
             embedWrapper.querySelector('iframe').addEventListener('load', () => {
-                blockElement.dataset.embedLoaded = true;
+                blockElement.dataset.embedLoaded = 'true';
             });
         } else {
             const videoEl = getVideoElement(link, autoplay, background);
             blockElement.append(videoEl);
             videoEl.addEventListener('canplay', () => {
-                blockElement.dataset.embedLoaded = true;
+                blockElement.dataset.embedLoaded = 'true';
             });
         }
     };
@@ -109,7 +109,7 @@ export default function decorateVideoBlock(block) {
     const placeholder = block.querySelector('picture');
     const link = block.querySelector('a').href;
     block.textContent = '';
-    block.dataset.embedLoaded = false;
+    block.dataset.embedLoaded = 'false';
 
     const autoplay = block.classList.contains('autoplay');
     if (placeholder) {
