@@ -248,14 +248,14 @@
       },
       {
         "component": "text",
-        "name": "text",
+        "name": "modelName",
         "value": "",
         "label": "Model Name",
         "valueType": "string"
       },
       {
         "component": "text",
-        "name": "text",
+        "name": "price",
         "value": "",
         "label": "Price",
         "valueType": "string"
