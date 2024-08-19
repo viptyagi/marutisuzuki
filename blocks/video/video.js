@@ -120,8 +120,7 @@ export default function decorateVideoBlock(block) {
 
         if (!autoplay) {
             wrapper.insertAdjacentHTML(
-                'beforeend',
-                '<div class="video-placeholder-play"><button type="button" title="Play"></button></div>'
+                'beforeend','<div class="video-placeholder-play"><button type="button" title="Play"></button></div>'
             );
             wrapper.addEventListener('click', () => {
                 wrapper.remove();

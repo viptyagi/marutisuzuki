@@ -1,6 +1,6 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
-import { decorateVideoBlock } from '../video/video.js';
+import { decorateVideoBlock } from './video/video.js';
 
 export default function decorate(block) {
   /* change to ul, li */
@@ -12,8 +12,7 @@ export default function decorate(block) {
     [...li.children].forEach((div) => {
       if (div.children.length === 1 && div.querySelector('picture')) {
         div.className = 'cards-card-image';
-      }
-      else if(div.querySelector('a')){
+      }else if (div.querySelector('a')) {
         decorateVideoBlock(div);
       }
       else div.className = 'cards-card-body';
