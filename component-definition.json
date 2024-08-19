@@ -116,7 +116,7 @@
                 "template": {
                   "name": "Cards",
                   "filter": "cards",
-                  "model": "cards"
+                  "style": "cards-"
                 }
               }
             }
