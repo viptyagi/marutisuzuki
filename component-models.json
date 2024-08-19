@@ -130,6 +130,18 @@
     ]
   },
   {
+    "id": "cards",
+    "fields": [
+      {
+        "component": "text",
+        "name": "style",
+        "value": "",
+        "label": "Style",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
