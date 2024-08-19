@@ -138,6 +138,13 @@
         "value": "",
         "label": "Style",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "testHeading",
+        "value": "",
+        "label": "Test Heading",
+        "valueType": "string"
       }
     ]
   },
