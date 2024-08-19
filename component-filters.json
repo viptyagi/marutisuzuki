@@ -45,5 +45,12 @@
     "components": [
       "slide"
     ]
+  },
+  {
+    "id": "cars",
+    "components": [
+      "button",
+      "card"
+    ]
   }
 ]

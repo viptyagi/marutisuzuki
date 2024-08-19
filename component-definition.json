@@ -181,6 +181,21 @@
               }
             }
           }
+        },
+        {
+          "title": "Cars",
+          "id": "cars",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Cars",
+                  "model": "cars"
+                }
+              }
+            }
+          }
         }
       ]
     }

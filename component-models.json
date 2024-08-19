@@ -223,5 +223,31 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "cars",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "modelName",
+        "value": "",
+        "label": "Model Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "price",
+        "value": "",
+        "label": "Price",
+        "valueType": "string"
+      }
+    ]
   }
 ]
