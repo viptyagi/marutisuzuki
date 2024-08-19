@@ -53,3 +53,12 @@
   box-shadow: 10px 10px 10px 10px grey;
   padding: 32px;
 }
+
+.section.nexaverse-box {
+  background-color: rgb(247 247 247);
+  line-height: 1.75rem;
+  margin: 0;
+  padding: 10px;
+  border-color: rgb(197 197 197);
+  border-style: solid;
+}
