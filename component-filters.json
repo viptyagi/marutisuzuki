@@ -37,6 +37,7 @@
     "id": "cards",
     "components": [
       "card",
+      "cars",
       "video"
     ]
   },
