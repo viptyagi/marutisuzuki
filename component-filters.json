@@ -52,5 +52,11 @@
     "components": [
       "button"
     ]
+  },
+  {
+    "id": "link",
+    "components": [
+      "card"
+    ]
   }
 ]

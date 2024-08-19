@@ -249,5 +249,29 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "link",
+    "fields": [
+      {
+        "component": "text",
+        "name": "text",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "href",
+        "label": "Path",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Icon",
+        "multi": false
+      }
+    ]
   }
 ]
