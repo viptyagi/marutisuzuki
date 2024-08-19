@@ -1,6 +1,6 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
-import  decorateVideoBlock  from '../video/video.js';
+import decorateVideoBlock from '../video/video.js';
 
 export default function decorate(block) {
   /* change to ul, li */
