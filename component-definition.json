@@ -180,21 +180,6 @@
               }
             }
           }
-        },
-        {
-          "title": "Link",
-          "id": "link",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "model": "link",
-                  "name": "Link"
-                }
-              }
-            }
-          }
         }
       ]
     }
