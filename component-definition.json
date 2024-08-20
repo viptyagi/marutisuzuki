@@ -191,7 +191,6 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "filter": "cars",
-                  "model": "cars",
                   "name": "Cars"
                 }
               }
