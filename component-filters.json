@@ -16,7 +16,8 @@
       "image",
       "button",
       "title",
-      "video"
+      "video",
+      "link"
     ]
   },
   {
@@ -39,7 +40,8 @@
     "components": [
       "card",
       "cars",
-      "video"
+      "video",
+      "link"
     ]
   },
   {
