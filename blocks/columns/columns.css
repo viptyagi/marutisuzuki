@@ -31,3 +31,16 @@
     order: unset;
   }
 }
+
+
+/***************** NEXA CARS ******************/
+
+.nexa-cars .columns > div {
+  flex-wrap: wrap;
+}
+
+@media (width >= 900px) {
+  .nexa-cars .columns > div > div {
+    flex: 1 1 calc(33.33% - 32px);
+  }
+}
