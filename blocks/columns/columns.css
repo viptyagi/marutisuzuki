@@ -95,7 +95,7 @@
 
 .nexa-cars .columns > div > div > p:nth-of-type(5) {
   display: inline-block;
-  margin: auto 10px auto 5px
+  margin: auto 10px auto 5px;
   width: 45%;
 }
 
