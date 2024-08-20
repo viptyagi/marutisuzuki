@@ -263,7 +263,7 @@
       {
         "component": "button",
         "name": "button2",
-        "label": "Second Button Label",
+        "label": "Second Button Label 2",
         "valueType": "string"
       }
     ]
