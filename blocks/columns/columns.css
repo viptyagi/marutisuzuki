@@ -83,6 +83,7 @@
 @media (width >= 900px) {
   .columns > div {
     align-items: flex-start;
+  }
 }
 
 @media (width >= 900px) {
