@@ -52,6 +52,18 @@ footer .default-content-wrapper h5 {
   font-weight: 700;
 }
 
+footer .columns-wrapper .columns div {
+  flex-direction: row;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+footer .default-content-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
 footer .cards div div h5 {
   font-size: 15px;
 }
