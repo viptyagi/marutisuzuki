@@ -45,6 +45,10 @@
   position: relative;
 }
 
+.nexa-cars .columns > div > div > p:nth-of-type(2) img {
+  width: auto;
+}
+
 .nexa-cars .columns > div > div > p:nth-of-type(1) {
   margin: 0;
   overflow: hidden;
@@ -63,10 +67,6 @@
   display: inline-block;
   margin-left: 5px;
   width: 240px;
-}
-
-.nexa-cars .columns > div > div > p:nth-of-type(2) img {
-  width: auto;
 }
 
 .nexa-cars .columns > div > div > p:nth-of-type(3) {
