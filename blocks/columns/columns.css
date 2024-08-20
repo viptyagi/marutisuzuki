@@ -88,7 +88,7 @@
 .nexa-cars .columns > div > div > p:nth-of-type(4) a, .nexa-cars .columns > div > div > p:nth-of-type(5) a {
   font-size: 14px;
   font-weight: 500;
-  padding: 5px 0px;
+  padding: 5px 0;
   text-transform: uppercase;
   width: 100%;
 }
@@ -139,7 +139,7 @@
   text-decoration: none;
 }
 
-@media (min-width: 768px) {
+@media (width>= 768px) {
   .nexa-cars .columns > div {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
