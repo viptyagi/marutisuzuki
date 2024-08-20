@@ -48,28 +48,28 @@
   margin: 0;
 }
 
-.nexa-cars .columns > div > div > div > p img {
+.nexa-cars .columns > div > div > p img {
   border-radius: 8px 8px 0 0;
   transition: transform 0.5s ease;
 }
 
-.nexa-cars .columns > div > div > div > p:hover img {
+.nexa-cars .columns > div > div > p:hover img {
   transform: scale(1.1);
 }
 
-.nexa-cars .columns > div > div > div > div {
+.nexa-cars .columns > div > div > div {
   position: absolute;
   left: 10px;
   top: 25px;
 }
 
-.nexa-cars .columns > div > div > div > div > p:nth-of-type(1) {
+.nexa-cars .columns > div > div > div > p:nth-of-type(1) {
   font-size: 18px;
   font-weight: 700;
   margin: 0;
 }
 
-.nexa-cars .columns > div > div > div > div > p:nth-of-type(2) {
+.nexa-cars .columns > div > div > div > p:nth-of-type(2) {
   color: rgb(151 151 151);
   font-size: 13px;
   font-weight: 500;
