@@ -38,6 +38,7 @@
     "id": "cards",
     "components": [
       "card",
+      "button",
       "cars",
       "video"
     ]
