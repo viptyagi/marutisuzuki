@@ -247,6 +247,12 @@
         "value": "",
         "label": "Price",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "href",
+        "label": "Path",
+        "valueType": "string"
       }
     ]
   },
