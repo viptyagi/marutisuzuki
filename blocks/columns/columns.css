@@ -90,7 +90,7 @@
   font-weight: 500;
 }
 
-.nexa-cars .columns > div > div > p:nth-of-type(2), .nexa-cars .columns > div > div > p:nth-of-type(5) {
+.nexa-cars .columns > div > div > p:nth-of-type(2) {
   display: inline-block;
 }
 
@@ -106,6 +106,10 @@
 
 .nexa-cars .columns > div > div > p:nth-of-type(4) a, .nexa-cars .columns > div > div > p:nth-of-type(5) a {
   padding: 5px 45px;
+}
+
+.nexa-cars .columns > div > div > p:nth-of-type(5) {
+  display: inline-block;
 }
 
 @media (width >= 900px) {
