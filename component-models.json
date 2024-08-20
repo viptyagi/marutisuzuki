@@ -249,21 +249,9 @@
         "valueType": "string"
       },
       {
-        "component": "text",
-        "name": "href",
-        "label": "Path",
-        "valueType": "string"
-      },
-      {
         "component": "button",
         "name": "button1",
         "label": "First Button Label",
-        "valueType": "string"
-      },
-      {
-        "component": "button",
-        "name": "button2",
-        "label": "Second Button Label 2",
         "valueType": "string"
       }
     ]
