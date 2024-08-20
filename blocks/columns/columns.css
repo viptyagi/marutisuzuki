@@ -74,7 +74,9 @@
 }
 
 .nexa-cars .columns > div > div > p:nth-of-type(4) a, .nexa-cars .columns > div > div > p:nth-of-type(5) a {
-  padding: 5px 45px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 60px;
 }
 
 .nexa-cars .columns > div > div > p:nth-of-type(5) {
