@@ -115,8 +115,7 @@
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Cards",
-                  "filter": "cards",
-                  "style": "cards-"
+                  "filter": "cards"
                 }
               }
             }
@@ -132,6 +131,21 @@
                 "template": {
                   "name": "Card",
                   "model": "card"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Car",
+          "id": "car",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Car",
+                  "filter": "car"
                 }
               }
             }
@@ -177,21 +191,6 @@
                 "template": {
                   "name": "Video",
                   "model": "video"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Cars",
-          "id": "cars",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "filter": "cars",
-                  "name": "Cars"
                 }
               }
             }
