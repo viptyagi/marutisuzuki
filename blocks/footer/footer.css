@@ -13,25 +13,29 @@ footer .footer {
 footer .footer p {
   margin: 0;
 }
-footer .columns-wrapper{
-   max-width: max-content;
-   margin: auto;
+
+footer .columns-wrapper {
+  max-width: max-content;
+  margin: auto;
 }
 
-footer .columns-wrapper .columns div div h5{
+footer .columns-wrapper .columns div div h5 {
   font-size: inherit;
   font-weight: inherit;
 }
+
 footer .columns-wrapper .columns div div ul {
   list-style-type: none;
   display: contents;
   margin-top: 5px;
 }
+
 footer .columns-wrapper .columns div div ul li a {
   font-size: 14px;
   color: white;
 }
-footer .columns-wrapper .columns div div ul li a:hover{
+
+footer .columns-wrapper .columns div div ul li a:hover {
   color: white;
 }
 
@@ -46,12 +50,13 @@ footer .cards {
 footer .cards div div h5 {
   font-size: 15px;
 }
-footer .default-content-wrapper p{
+
+footer .default-content-wrapper p {
   font-size: .875rem;
   line-height: 1.25rem;
-
 }
-footer .default-content-wrapper h5{
+
+footer .default-content-wrapper h5 {
   font-size: 1rem;
   font-weight: 700;
 }
