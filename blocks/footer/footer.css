@@ -59,11 +59,6 @@ footer .columns-wrapper .columns div {
   justify-content: flex-start;
 }
 
-footer .default-content-wrapper {
-  display: flex;
-  align-items: flex-start;
-}
-
 footer .cards div div h5 {
   font-size: 15px;
 }
