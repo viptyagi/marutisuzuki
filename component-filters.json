@@ -18,7 +18,8 @@
       "title",
       "video",
       "cards",
-      "link"
+      "link",
+      "card"
     ]
   },
   {
@@ -47,12 +48,6 @@
     "id": "carousel",
     "components": [
       "slide"
-    ]
-  },
-  {
-    "id": "link",
-    "components": [
-      "card"
     ]
   }
 ]

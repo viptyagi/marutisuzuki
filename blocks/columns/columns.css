@@ -40,12 +40,14 @@
 }
 
 .nexa-cars .columns > div > div {
+  border-radius: 8px 8px 0 0;
   box-shadow: 0 0 10px 1px rgb(0 0 0 / 20%);
   position: relative;
 }
 
 .nexa-cars .columns > div > div > p {
   margin: 0;
+  overflow: hidden;
 }
 
 .nexa-cars .columns > div > div > p img {
@@ -60,7 +62,7 @@
 .nexa-cars .columns > div > div > div {
   position: absolute;
   left: 10px;
-  top: 25px;
+  top: 10px;
 }
 
 .nexa-cars .columns > div > div > div > p:nth-of-type(1) {
