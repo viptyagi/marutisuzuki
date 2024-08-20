@@ -19,11 +19,6 @@ footer .columns-wrapper {
   margin: auto;
 }
 
-footer .columns-wrapper .columns div div h5 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
 footer .columns-wrapper .columns div div ul {
   list-style-type: none;
   display: contents;
@@ -47,10 +42,6 @@ footer .cards {
   gap: 5px;
 }
 
-footer .cards div div h5 {
-  font-size: 15px;
-}
-
 footer .default-content-wrapper p {
   font-size: .875rem;
   line-height: 1.25rem;
@@ -59,4 +50,13 @@ footer .default-content-wrapper p {
 footer .default-content-wrapper h5 {
   font-size: 1rem;
   font-weight: 700;
+}
+
+footer .cards div div h5 {
+  font-size: 15px;
+}
+
+footer .columns-wrapper .columns div div h5 {
+  font-size: inherit;
+  font-weight: inherit;
 }
