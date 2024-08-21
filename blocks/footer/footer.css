@@ -28,6 +28,7 @@ footer .columns-wrapper .columns div div ul {
 footer .columns-wrapper .columns div div ul li a {
   font-size: 14px;
   color: white;
+  text-decoration-line: none;
 }
 
 footer .columns-wrapper .columns div div ul li a:hover {
@@ -60,7 +61,8 @@ footer .default-content-wrapper h5 {
 } */
 
 footer .section.columns-container .default-content-wrapper {
-   align-items: flex-start
+   align-items: flex-start;
+   font-size: 16px;
 }
 
 footer .cards div div h5 {
