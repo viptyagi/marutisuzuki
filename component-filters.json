@@ -17,8 +17,7 @@
       "button",
       "title",
       "video",
-      "cards",
-      "section"
+      "cards"
     ]
   },
   {
@@ -33,7 +32,6 @@
       "columns",
       "carousel",
       "video",
-      "section",
       "tab",
       "slide"
     ]

@@ -32,33 +32,6 @@
   }
 }
 
-/********************************* NEXA WORLD *************************************/
-
-.nexa-world .section:nth-of-type(1) h2 {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 0;
-  text-align: center;
-}
-
-.nexa-world .section:nth-of-type(1) h5 {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 0;
-  margin-top: 0;
-  text-align: center;
-}
-
-.nexa-world .section:nth-of-type(1) p {
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.nexa-world .section:nth-of-type(1) .section {
-  display: flex;
-  justify-content: center;
-}
-
 /***************** NEXA CARS ******************/
 
 .nexa-cars h1 {
