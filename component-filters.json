@@ -31,7 +31,9 @@
       "cards",
       "columns",
       "carousel",
-      "video"
+      "video",
+      "tab",
+      "slide"
     ]
   },
   {
