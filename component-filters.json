@@ -33,7 +33,9 @@
       "columns",
       "carousel",
       "video",
-      "section"
+      "section",
+      "tab",
+      "slide"
     ]
   },
   {
