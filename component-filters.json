@@ -17,8 +17,7 @@
       "button",
       "title",
       "video",
-      "cards",
-      "container"
+      "cards"
     ]
   },
   {
@@ -34,19 +33,7 @@
       "carousel",
       "video",
       "tab",
-      "slide",
-      "container"
-    ]
-  },
-  {
-    "id": "container",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title",
-      "cards",
-      "columns"
+      "slide"
     ]
   },
   {
