@@ -197,12 +197,13 @@
         "multi": false
       },
       {
-        "component": "richtext",
-        "name": "text",
+        "component": "text",
+        "name": "tab",
         "value": "",
-        "label": "Text",
+        "label": "Tab",
         "valueType": "string"
       }
+      
     ]
   },
   {
