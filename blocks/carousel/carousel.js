@@ -33,8 +33,6 @@ export function updateButtons(activeSlide) {
 
     });
 
-// ... rest of the code remains the same ...
-
 // Add automatic slide change every 5 seconds
     let slideIndex = 0;
     setInterval(() => {
