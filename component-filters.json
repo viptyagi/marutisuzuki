@@ -39,7 +39,8 @@
   {
     "id": "carousel",
     "components": [
-      "slide"
+      "slide",
+      "button"
     ]
   }
 ]
