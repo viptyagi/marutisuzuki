@@ -7,38 +7,31 @@ export function updateButtons(activeSlide) {
   }
 
   export default function decorate(block) {
+    const buttons = document.createElement('div');
     [...block.children].forEach((row, i) => {
-      const classes = ['image', 'button']; // Corrected the class to 'button'
+      const classes = ['image']; // Removed 'button' since we're only using images
       classes.forEach((e, j) => {
         row.children[j].classList.add(`carousel-${e}`);
       });
 
-      // Extract image and button elements
+// Extract image element
       const imageElement = row.querySelector('.carousel-image');
-      const buttonElement = row.querySelector('.carousel-button');
 
-      // Set image source
+// Set image source
       imageElement.src = imageElement.getAttribute('data-image-src');
 
-      // If button exists, set its properties and add it to the row
-      if (buttonElement) {
-        buttonElement.href = buttonElement.getAttribute('data-link');
-        buttonElement.textContent = buttonElement.getAttribute('data-title');
-        row.appendChild(buttonElement);
-      }
-
-      // Add button to carousel navigation
-      const navButton = document.createElement('button');
-      navButton.title = 'Carousel Nav';
-      if (!i) navButton.classList.add('selected');
-      navButton.addEventListener('click', () => {
-        block.scrollTo({ top: 0, left: row.offsetLeft - row.parentNode.offsetLeft, behavior: 'smooth' });
-        [...block.closest('.carousel-wrapper').querySelector('.carousel-buttons').children].forEach((r) => r.classList.remove('selected'));
-        navButton.classList.add('selected');
-      });
+// Add button to carousel navigation (optional)
+        const button = document.createElement('button');
+        button.title = 'Carousel Nav';
+        if (!i) button.classList.add('selected');
+        button.addEventListener('click', () => {
+          block.scrollTo({ top: 0, left: row.offsetLeft - row.parentNode.offsetLeft, behavior: 'smooth' });
+          [...block.closest('.carousel-wrapper').querySelector('.carousel-buttons').children].forEach((r) => r.classList.remove('selected'));
+          button.classList.add('selected');
+        });
+        buttons.append(button);
     });
-
-    // Add automatic slide change every 5 seconds
+// Add automatic slide change every 5 seconds
     let slideIndex = 0;
     setInterval(() => {
       const nextSlide = block.children[slideIndex];
