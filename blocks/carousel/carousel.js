@@ -36,11 +36,6 @@ export function updateButtons(activeSlide) {
         [...block.closest('.carousel-wrapper').querySelector('.carousel-buttons').children].forEach((r) => r.classList.remove('selected'));
         navButton.classList.add('selected');
       });
-      buttons.append(navButton);
-      if (block.nextElementSibling) block.nextElementSibling.replaceWith(buttons);
-    else block.parentElement.append(buttons);
-
-
     });
 
     // Add automatic slide change every 5 seconds
