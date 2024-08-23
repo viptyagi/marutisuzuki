@@ -198,9 +198,9 @@
       },
       {
         "component": "text",
-        "name": "tab",
+        "name": "text",
         "value": "",
-        "label": "Tab",
+        "label": "Text",
         "valueType": "string"
       }
       
