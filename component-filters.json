@@ -33,7 +33,19 @@
       "carousel",
       "video",
       "tab",
-      "slide"
+      "slide",
+      "section"
+    ]
+  },
+  {
+    "id": "container",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "cards",
+      "columns"
     ]
   },
   {
