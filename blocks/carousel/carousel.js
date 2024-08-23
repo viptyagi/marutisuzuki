@@ -30,9 +30,7 @@ export function updateButtons(activeSlide) {
           button.classList.add('selected');
         });
         buttons.append(button);
-
     });
-
 // Add automatic slide change every 5 seconds
     let slideIndex = 0;
     setInterval(() => {
