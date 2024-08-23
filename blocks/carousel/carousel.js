@@ -7,8 +7,6 @@ export function updateButtons(activeSlide) {
     button.classList.add('selected');
 }
 
-
-
 export default function decorate(block) {
     const buttons = document.createElement('div');
     [...block.children].forEach((row, i) => {
