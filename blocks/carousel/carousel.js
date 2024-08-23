@@ -5,22 +5,21 @@ export function updateButtons(activeSlide) {
     [...block.closest('.carousel-wrapper').querySelector('.carousel-buttons').children].forEach((r) => r.classList.remove('selected'));
     button.classList.add('selected');
   }
-  
+
   export default function decorate(block) {
+    const buttons = document.createElement('div');
     [...block.children].forEach((row, i) => {
       const classes = ['image']; // Removed 'button' since we're only using images
       classes.forEach((e, j) => {
         row.children[j].classList.add(`carousel-${e}`);
       });
-  
+
       // Extract image element
       const imageElement = row.querySelector('.carousel-image');
-  
 
-  
       // Set image source
       imageElement.src = imageElement.getAttribute('data-image-src');
-  
+
       // Add button to carousel navigation (optional)
       if (buttonElement) {
         const button = document.createElement('button');
@@ -34,10 +33,10 @@ export function updateButtons(activeSlide) {
         buttons.append(button);
       }
     });
-  
-    // ... rest of the code remains the same ...
-  
-    // Add automatic slide change every 5 seconds
+
+// ... rest of the code remains the same ...
+
+// Add automatic slide change every 5 seconds
     let slideIndex = 0;
     setInterval(() => {
       const nextSlide = block.children[slideIndex];
