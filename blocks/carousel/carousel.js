@@ -14,14 +14,13 @@ export function updateButtons(activeSlide) {
         row.children[j].classList.add(`carousel-${e}`);
       });
 
-      // Extract image element
+// Extract image element
       const imageElement = row.querySelector('.carousel-image');
 
-      // Set image source
+// Set image source
       imageElement.src = imageElement.getAttribute('data-image-src');
 
-      // Add button to carousel navigation (optional)
-      if (buttonElement) {
+// Add button to carousel navigation (optional)
         const button = document.createElement('button');
         button.title = 'Carousel Nav';
         if (!i) button.classList.add('selected');
@@ -31,7 +30,7 @@ export function updateButtons(activeSlide) {
           button.classList.add('selected');
         });
         buttons.append(button);
-      }
+      
     });
 
 // ... rest of the code remains the same ...
