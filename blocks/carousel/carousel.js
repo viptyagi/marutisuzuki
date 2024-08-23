@@ -29,8 +29,8 @@ export function updateButtons(activeSlide) {
           [...block.closest('.carousel-wrapper').querySelector('.carousel-buttons').children].forEach((r) => r.classList.remove('selected'));
           button.classList.add('selected');
         });
-       buttons.append(button);
- 
+        buttons.append(button);
+
     });
 
 // ... rest of the code remains the same ...
