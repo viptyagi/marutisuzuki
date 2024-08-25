@@ -115,19 +115,39 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
-  const navSections = nav.querySelector('.nav-sections');
-  if (navSections) {
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-      if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-      navSection.addEventListener('click', () => {
-        if (isDesktop.matches) {
-          const expanded = navSection.getAttribute('aria-expanded') === 'true';
-          toggleAllNavSections(navSections);
-          navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-        }
-      });
+const navSections = nav.querySelector('.nav-sections');
+if (navSections) {
+  navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+    if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+    navSection.addEventListener('click', () => {
+      if (isDesktop.matches) {
+        const expanded = navSection.getAttribute('aria-expanded') === 'true';
+        toggleAllNavSections(navSections);
+        navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      }
     });
-  }
+
+    // Create and append the headerShadowCard div
+    const headerShadowCard = document.createElement('div'); // Renamed the variable
+    headerShadowCard.className = 'header-shadow-card';
+    headerShadowCard.innerHTML = '<p>This is the header shadow card content.</p>'; // Replace with your actual content
+    headerShadowCard.style.display = 'none';
+    navSection.appendChild(headerShadowCard);
+
+    // Handle hover event to toggle the visibility of the header-shadow-card div
+    navSection.addEventListener('mouseenter', () => {
+      if (isDesktop.matches) {
+        headerShadowCard.style.display = 'block';
+      }
+    });
+
+    navSection.addEventListener('mouseleave', () => {
+      if (isDesktop.matches) {
+        headerShadowCard.style.display = 'none';
+      }
+    });
+  });
+}
 
   // hamburger for mobile
   const hamburger = document.createElement('div');
