@@ -225,7 +225,7 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 2em;
+    /* gap: 2em; */
     margin: 0;
     font-size: var(--body-font-size-xs);
   }
@@ -272,4 +272,22 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+#nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav div ul li {
+  padding-right: 5px;
+  margin-left: 15px;
+  border-right: 1px solid black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  color: #000;
 }
