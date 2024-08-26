@@ -189,6 +189,8 @@ if (navSections) {
     const navTitle = navSection.textContent.trim();
     navSection.addEventListener('mouseenter', () => {
       if (isDesktop.matches) {
+        const expanded = navSection.getAttribute('aria-expanded') === 'true';
+        navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
         const content = generateList(navConfig[navTitle]);
         headerShadowCard.innerHTML = '';
         headerShadowCard = navSection.appendChild(content);
@@ -198,6 +200,7 @@ if (navSections) {
 
     navSection.addEventListener('mouseleave', () => {
       if (isDesktop.matches) {
+        headerShadowCard.innerHTML = '';
         headerShadowCard.style.display = 'none';
       }
     });
