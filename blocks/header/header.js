@@ -178,7 +178,7 @@ if (navSections) {
     });
 
     // Create and append the headerShadowCard div
-   let headerShadowCard = document.createElement(''); // Renamed the variable
+   let headerShadowCard = document.createElement('div'); // Renamed the variable
     // headerShadowCard.className = 'header-shadow-card';
     // headerShadowCard.innerHTML = '<p>This is the header shadow card content.</p>';
     // Replace with your actual content
