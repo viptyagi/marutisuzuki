@@ -190,7 +190,7 @@ if (navSections) {
     navSection.addEventListener('mouseenter', () => {
       if (isDesktop.matches) {
         const content = generateList(navConfig[navTitle]);
-        headerShadowCard.innerHTML = ""
+        headerShadowCard.innerHTML = '';
         headerShadowCard = navSection.appendChild(content);
         headerShadowCard.style.display = 'block';
       }
