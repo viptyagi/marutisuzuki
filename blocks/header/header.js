@@ -169,7 +169,7 @@ if (navSections) {
     });
 
     // Create and append the headerShadowCard div
-    //const headerShadowCard = document.createElement('div'); // Renamed the variable
+    var headerShadowCard; // Renamed the variable
     // headerShadowCard.className = 'header-shadow-card';
     // headerShadowCard.innerHTML = '<p>This is the header shadow card content.</p>';
     // Replace with your actual content
@@ -181,7 +181,7 @@ if (navSections) {
     navSection.addEventListener('mouseenter', () => {
       if (isDesktop.matches) {
         const content = generateList(navConfig[navTitle]);
-        const headerShadowCard = navSection.appendChild(content);
+        headerShadowCard = navSection.appendChild(content);
         headerShadowCard.style.display = 'block';
       }
     });
