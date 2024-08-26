@@ -5,16 +5,18 @@ const navConfig = {
   'NEXA CARS': {
         type: 'list',
         items: [
-          { name: 'Service 1', url: '/service1' }
+          { name: 'Service 1', url: '/service1' },
         ],
       },
       'BUYER GUIDE': {
         type: 'grid',
         items: [
-          { name: 'Product 1', image: 'product1.jpg', url: '/product1', details: 'Details about product 1' }
+          {
+            name: 'Product 1', image: 'product1.jpg', url: '/product1', details: 'Details about product 1'
+          },
         ],
       },
-    }
+    };
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -41,7 +43,7 @@ function generateList(config) {
   }
 
   return content;
-}
+};
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
