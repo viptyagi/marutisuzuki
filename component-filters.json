@@ -50,5 +50,12 @@
       "slide",
       "button"
     ]
+  },
+  {
+    "id": "video",
+    "components": [
+      "button",
+      "text"
+    ]
   }
 ]
