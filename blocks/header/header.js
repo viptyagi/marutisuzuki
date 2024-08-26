@@ -6,13 +6,19 @@ const navConfig = {
         type: 'list',
         items: [
           { name: 'Service 1', url: '/service1' },
+          { name: 'Service 2', url: '/service2' },
+          { name: 'Service 3', url: '/service3' },
+          { name: 'Service 4', url: '/service4' },
         ],
       },
       'BUYER GUIDE': {
         type: 'grid',
         items: [
           {
-            name: 'Product 1', image: 'product1.jpg', url: '/product1', details: 'Details about product 1',
+            name: 'Product 1', image: 'Showroom-locator.jpg', url: '/product1', details: 'Details about product 1',
+          },
+          {
+            name: 'Product 2', image: 'Showroom-locator2.jpg', url: '/product1', details: 'Details about product 2',
           },
         ],
       },
@@ -29,6 +35,7 @@ function generateList(config) {
       const link = document.createElement('a');
       link.href = item.url;
       link.textContent = item.name;
+      content.className = 'nav-list-items';
       listItem.appendChild(link);
       content.appendChild(listItem);
     });
@@ -36,8 +43,10 @@ function generateList(config) {
     config.items.forEach((item) => {
       const gridItem = document.createElement('div');
       const image = document.createElement('img');
+      image.alt = item.name;
       image.src = item.image;
       gridItem.appendChild(image);
+      content.className = 'img-list-items';
       content.appendChild(gridItem);
     });
   }
