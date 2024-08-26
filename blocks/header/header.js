@@ -11,9 +11,9 @@ const navConfig = {
       'BUYER GUIDE': {
         type: 'grid',
         items: [
-          { name: 'Product 1', image: 'product1.jpg', url: '/product1', details: 'Details about product 1' },
+          { name: 'Product 1', image: 'product1.jpg', url: '/product1', details: 'Details about product 1' }
         ],
-      }
+      },
     }
 
 // media query match that indicates mobile/tablet width
@@ -22,7 +22,7 @@ function generateList(config) {
   const content = document.createElement(config.type === 'list' ? 'ul' : 'div');
 
   if (config.type === 'list') {
-    config.items.forEach(item => {
+    config.items.forEach((item) => {
       const listItem = document.createElement('li');
       const link = document.createElement('a');
       link.href = item.url;
@@ -30,8 +30,8 @@ function generateList(config) {
       listItem.appendChild(link);
       content.appendChild(listItem);
     });
-  } else if (config.type === 'grid') {s
-    config.items.forEach(item => {
+  } else if (config.type === 'grid') {
+    config.items.forEach((item) => {
       const gridItem = document.createElement('div');
       const image = document.createElement('img');
       image.src = item.image;
@@ -167,9 +167,10 @@ if (navSections) {
     });
 
     // Create and append the headerShadowCard div
-    // const headerShadowCard = document.createElement('div'); // Renamed the variable
-    // headerShadowCard.className = 'header-shadow-card';
-    // headerShadowCard.innerHTML = '<p>This is the header shadow card content.</p>'; // Replace with your actual content
+    const headerShadowCard = document.createElement('div'); // Renamed the variable
+     headerShadowCard.className = 'header-shadow-card';
+    // headerShadowCard.innerHTML = '<p>This is the header shadow card content.</p>';
+    // Replace with your actual content
     // headerShadowCard.style.display = 'none';
     // navSection.appendChild(headerShadowCard);
 
