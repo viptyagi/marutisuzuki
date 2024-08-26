@@ -1,8 +1,49 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
+const navConfig = {
+  'NEXA CARS': {
+        type: 'list',
+        items: [
+          { name: 'Service 1', url: '/service1' },
+        ],
+      },
+      'BUYER GUIDE': {
+        type: 'grid',
+        items: [
+          {
+            name: 'Product 1', image: 'product1.jpg', url: '/product1', details: 'Details about product 1',
+          },
+        ],
+      },
+    };
+
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
+function generateList(config) {
+  const content = document.createElement(config.type === 'list' ? 'ul' : 'div');
+
+  if (config.type === 'list') {
+    config.items.forEach((item) => {
+      const listItem = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = item.url;
+      link.textContent = item.name;
+      listItem.appendChild(link);
+      content.appendChild(listItem);
+    });
+  } else if (config.type === 'grid') {
+    config.items.forEach((item) => {
+      const gridItem = document.createElement('div');
+      const image = document.createElement('img');
+      image.src = item.image;
+      gridItem.appendChild(image);
+      content.appendChild(gridItem);
+    });
+  }
+
+  return content;
+}
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
@@ -129,14 +170,18 @@ if (navSections) {
 
     // Create and append the headerShadowCard div
     const headerShadowCard = document.createElement('div'); // Renamed the variable
-    headerShadowCard.className = 'header-shadow-card';
-    headerShadowCard.innerHTML = '<p>This is the header shadow card content.</p>'; // Replace with your actual content
-    headerShadowCard.style.display = 'none';
-    navSection.appendChild(headerShadowCard);
+     headerShadowCard.className = 'header-shadow-card';
+    // headerShadowCard.innerHTML = '<p>This is the header shadow card content.</p>';
+    // Replace with your actual content
+    // headerShadowCard.style.display = 'none';
+    // navSection.appendChild(headerShadowCard);
 
     // Handle hover event to toggle the visibility of the header-shadow-card div
+    const navTitle = navSection.textContent.trim();
     navSection.addEventListener('mouseenter', () => {
       if (isDesktop.matches) {
+        const content = generateList(navConfig[navTitle]);
+        headerShadowCard.appendChild(content);
         headerShadowCard.style.display = 'block';
       }
     });
