@@ -136,6 +136,7 @@ export default async function decorate(block) {
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
+  let headerShadowCard;
 
   // decorate nav DOM
   block.textContent = '';
@@ -169,8 +170,8 @@ if (navSections) {
     });
 
     // Create and append the headerShadowCard div
-    const headerShadowCard = document.createElement('div'); // Renamed the variable
-     headerShadowCard.className = 'header-shadow-card';
+    // let headerShadowCard; // Renamed the variable
+    // headerShadowCard.className = 'header-shadow-card';
     // headerShadowCard.innerHTML = '<p>This is the header shadow card content.</p>';
     // Replace with your actual content
     // headerShadowCard.style.display = 'none';
@@ -181,7 +182,7 @@ if (navSections) {
     navSection.addEventListener('mouseenter', () => {
       if (isDesktop.matches) {
         const content = generateList(navConfig[navTitle]);
-        headerShadowCard.appendChild(content);
+        headerShadowCard = navSection.appendChild(content);
         headerShadowCard.style.display = 'block';
       }
     });
