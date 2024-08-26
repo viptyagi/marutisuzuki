@@ -12,7 +12,7 @@ const navConfig = {
         type: 'grid',
         items: [
           {
-            name: 'Product 1', image: 'product1.jpg', url: '/product1', details: 'Details about product 1'
+            name: 'Product 1', image: 'product1.jpg', url: '/product1', details: 'Details about product 1',
           },
         ],
       },
@@ -39,11 +39,11 @@ function generateList(config) {
       image.src = item.image;
       gridItem.appendChild(image);
       content.appendChild(gridItem);
-    })
+    });
   }
 
   return content;
-};
+}
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
