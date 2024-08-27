@@ -27,7 +27,7 @@ const navConfig = {
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 function generateList(config) {
-    if(config) {
+    if (config) {
         const content = document.createElement(config.type === 'list' ? 'ul' : 'div');
         if (config.type === 'list') {
           config.items.forEach((item) => {
@@ -50,8 +50,6 @@ function generateList(config) {
             content.appendChild(gridItem);
           });
         }
-
-
     }
   return content;
 }
@@ -202,7 +200,7 @@ if (navSections) {
 
     navSection.addEventListener('mouseleave', () => {
       if (isDesktop.matches) {
-        navSection.setAttribute('aria-expanded',false);
+        navSection.setAttribute('aria-expanded', false);
         headerShadowCard.remove();
       }
     });
