@@ -1,4 +1,4 @@
-export default function decorateVideoBlock(block) {
+export default function decorate(block) {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     const embedYoutube = (url, autoplay, background) => {
