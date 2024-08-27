@@ -27,31 +27,36 @@ const navConfig = {
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 function generateList(config) {
-    if (config) {
-        const content = document.createElement(config.type === 'list' ? 'ul' : 'div');
-        if (config.type === 'list') {
+  let content = null;
+
+  if (config && (config.type === 'list' || config.type === 'grid')) {
+      content = document.createElement(config.type === 'list' ? 'ul' : 'div');
+
+      if (config.type === 'list') {
           config.items.forEach((item) => {
-            const listItem = document.createElement('li');
-            const link = document.createElement('a');
-            link.href = item.url;
-            link.textContent = item.name;
-            content.className = 'nav-list-items';
-            listItem.appendChild(link);
-            content.appendChild(listItem);
+              const listItem = document.createElement('li');
+              const link = document.createElement('a');
+              link.href = item.url;
+              link.textContent = item.name;
+              listItem.appendChild(link);
+              content.appendChild(listItem);
           });
-        } else if (config.type === 'grid') {
+          content.className = 'nav-list-items';
+      } else if (config.type === 'grid') {
           config.items.forEach((item) => {
-            const gridItem = document.createElement('div');
-            const image = document.createElement('img');
-            image.alt = item.name;
-            image.src = item.image;
-            gridItem.appendChild(image);
-            content.className = 'img-list-items';
-            content.appendChild(gridItem);
+              const gridItem = document.createElement('div');
+              const image = document.createElement('img');
+              image.alt = item.name;
+              image.src = item.image;
+              gridItem.appendChild(image);
+              content.appendChild(gridItem);
           });
-        }
-        return content;
-    }
+          content.className = 'img-list-items';
+      }
+  } else {
+      console.error('Invalid configuration or type provided.');
+  }
+  return content;
 }
 
 function closeOnEscape(e) {
