@@ -27,30 +27,32 @@ const navConfig = {
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 function generateList(config) {
-  const content = document.createElement(config.type === 'list' ? 'ul' : 'div');
+    if(config) {
+        const content = document.createElement(config.type === 'list' ? 'ul' : 'div');
+        if (config.type === 'list') {
+          config.items.forEach((item) => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = item.url;
+            link.textContent = item.name;
+            content.className = 'nav-list-items';
+            listItem.appendChild(link);
+            content.appendChild(listItem);
+          });
+        } else if (config.type === 'grid') {
+          config.items.forEach((item) => {
+            const gridItem = document.createElement('div');
+            const image = document.createElement('img');
+            image.alt = item.name;
+            image.src = item.image;
+            gridItem.appendChild(image);
+            content.className = 'img-list-items';
+            content.appendChild(gridItem);
+          });
+        }
 
-  if (config.type === 'list') {
-    config.items.forEach((item) => {
-      const listItem = document.createElement('li');
-      const link = document.createElement('a');
-      link.href = item.url;
-      link.textContent = item.name;
-      content.className = 'nav-list-items';
-      listItem.appendChild(link);
-      content.appendChild(listItem);
-    });
-  } else if (config.type === 'grid') {
-    config.items.forEach((item) => {
-      const gridItem = document.createElement('div');
-      const image = document.createElement('img');
-      image.alt = item.name;
-      image.src = item.image;
-      gridItem.appendChild(image);
-      content.className = 'img-list-items';
-      content.appendChild(gridItem);
-    });
-  }
 
+    }
   return content;
 }
 
@@ -87,10 +89,10 @@ function focusNavSection() {
 }
 
 /**
- * Toggles all nav sections
- * @param {Element} sections The container element
- * @param {Boolean} expanded Whether the element should be expanded or collapsed
- */
+* Toggles all nav sections
+* @param {Element} sections The container element
+* @param {Boolean} expanded Whether the element should be expanded or collapsed
+*/
 function toggleAllNavSections(sections, expanded = false) {
   sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
     section.setAttribute('aria-expanded', expanded);
@@ -98,11 +100,11 @@ function toggleAllNavSections(sections, expanded = false) {
 }
 
 /**
- * Toggles the entire nav
- * @param {Element} nav The container element
- * @param {Element} navSections The nav sections within the container element
- * @param {*} forceExpanded Optional param to force nav expand behavior when not null
- */
+* Toggles the entire nav
+* @param {Element} nav The container element
+* @param {Element} navSections The nav sections within the container element
+* @param {*} forceExpanded Optional param to force nav expand behavior when not null
+*/
 function toggleMenu(nav, navSections, forceExpanded = null) {
   const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
   const button = nav.querySelector('.nav-hamburger button');
@@ -137,9 +139,9 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 }
 
 /**
- * loads and decorates the header, mainly the nav
- * @param {Element} block The header block element
- */
+* loads and decorates the header, mainly the nav
+* @param {Element} block The header block element
+*/
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
@@ -200,8 +202,8 @@ if (navSections) {
 
     navSection.addEventListener('mouseleave', () => {
       if (isDesktop.matches) {
-        headerShadowCard.innerHTML = '';
-        headerShadowCard.style.display = 'none';
+        navSection.setAttribute('aria-expanded',false);
+        headerShadowCard.remove();
       }
     });
   });
