@@ -49,8 +49,8 @@ function generateList(config) {
             content.className = 'img-list-items';
             content.appendChild(gridItem);
           });
-          return content;
         }
+        return content;
     }
 }
 
