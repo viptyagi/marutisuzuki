@@ -1,8 +1,63 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
+const navConfig = {
+  'NEXA CARS': {
+        type: 'list',
+        items: [
+          { name: 'Service 1', url: '/service1' },
+          { name: 'Service 2', url: '/service2' },
+          { name: 'Service 3', url: '/service3' },
+          { name: 'Service 4', url: '/service4' },
+        ],
+      },
+      'BUYER GUIDE': {
+        type: 'grid',
+        items: [
+          {
+            name: 'Product 1', image: 'Showroom-locator.jpg', url: '/product1', details: 'Details about product 1',
+          },
+          {
+            name: 'Product 2', image: 'Showroom-locator2.jpg', url: '/product1', details: 'Details about product 2',
+          },
+        ],
+      },
+    };
+
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
+function generateList(config) {
+  let content = null;
+
+  if (config && (config.type === 'list' || config.type === 'grid')) {
+      content = document.createElement(config.type === 'list' ? 'ul' : 'div');
+
+      if (config.type === 'list') {
+          config.items.forEach((item) => {
+              const listItem = document.createElement('li');
+              const link = document.createElement('a');
+              link.href = item.url;
+              link.textContent = item.name;
+              listItem.appendChild(link);
+              content.appendChild(listItem);
+          });
+          content.className = 'nav-list-items';
+      } else if (config.type === 'grid') {
+          config.items.forEach((item) => {
+              const gridItem = document.createElement('div');
+              const image = document.createElement('img');
+              image.alt = item.name;
+              image.src = item.image;
+              gridItem.appendChild(image);
+              content.appendChild(gridItem);
+          });
+          content.className = 'img-list-items';
+      }
+  } else {
+      console.error('Invalid configuration or type provided.');
+  }
+  return content;
+}
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
@@ -37,10 +92,10 @@ function focusNavSection() {
 }
 
 /**
- * Toggles all nav sections
- * @param {Element} sections The container element
- * @param {Boolean} expanded Whether the element should be expanded or collapsed
- */
+* Toggles all nav sections
+* @param {Element} sections The container element
+* @param {Boolean} expanded Whether the element should be expanded or collapsed
+*/
 function toggleAllNavSections(sections, expanded = false) {
   sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
     section.setAttribute('aria-expanded', expanded);
@@ -48,11 +103,11 @@ function toggleAllNavSections(sections, expanded = false) {
 }
 
 /**
- * Toggles the entire nav
- * @param {Element} nav The container element
- * @param {Element} navSections The nav sections within the container element
- * @param {*} forceExpanded Optional param to force nav expand behavior when not null
- */
+* Toggles the entire nav
+* @param {Element} nav The container element
+* @param {Element} navSections The nav sections within the container element
+* @param {*} forceExpanded Optional param to force nav expand behavior when not null
+*/
 function toggleMenu(nav, navSections, forceExpanded = null) {
   const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
   const button = nav.querySelector('.nav-hamburger button');
@@ -87,9 +142,9 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 }
 
 /**
- * loads and decorates the header, mainly the nav
- * @param {Element} block The header block element
- */
+* loads and decorates the header, mainly the nav
+* @param {Element} block The header block element
+*/
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
@@ -115,19 +170,47 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
-  const navSections = nav.querySelector('.nav-sections');
-  if (navSections) {
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-      if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-      navSection.addEventListener('click', () => {
-        if (isDesktop.matches) {
-          const expanded = navSection.getAttribute('aria-expanded') === 'true';
-          toggleAllNavSections(navSections);
-          navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-        }
-      });
+const navSections = nav.querySelector('.nav-sections');
+if (navSections) {
+  navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+    if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+    navSection.addEventListener('click', () => {
+      if (isDesktop.matches) {
+        const expanded = navSection.getAttribute('aria-expanded') === 'true';
+        toggleAllNavSections(navSections);
+        navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      }
     });
-  }
+
+    // Create and append the headerShadowCard div
+   let headerShadowCard = document.createElement('div'); // Renamed the variable
+    // headerShadowCard.className = 'header-shadow-card';
+    // headerShadowCard.innerHTML = '<p>This is the header shadow card content.</p>';
+    // Replace with your actual content
+    // headerShadowCard.style.display = 'none';
+    // navSection.appendChild(headerShadowCard);
+
+    // Handle hover event to toggle the visibility of the header-shadow-card div
+    const navTitle = navSection.textContent.trim();
+    navSection.addEventListener('mouseenter', () => {
+      if (isDesktop.matches) {
+        const expanded = navSection.getAttribute('aria-expanded') === 'true';
+        navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        const content = generateList(navConfig[navTitle]);
+        headerShadowCard.innerHTML = '';
+        headerShadowCard = navSection.appendChild(content);
+        headerShadowCard.style.display = 'block';
+      }
+    });
+
+    navSection.addEventListener('mouseleave', () => {
+      if (isDesktop.matches) {
+        navSection.setAttribute('aria-expanded', false);
+        headerShadowCard.remove();
+      }
+    });
+  });
+}
 
   // hamburger for mobile
   const hamburger = document.createElement('div');

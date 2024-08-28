@@ -2,50 +2,51 @@
     text-align: center;
     max-width: 900px;
     margin: 24px auto;
-  }
-  
-  .video[data-embed-loaded='false']:not(.placeholder) {
+}
+
+.video[data-embed-loaded='false']:not(.placeholder) {
     /* reserve an approximate space to avoid extensive layout shifts */
     aspect-ratio: 16 / 9;
-  }
-  
-  .video > div {
+}
+
+.video > div {
     display: flex;
     justify-content: center;
-  }
-  
-  .video video {
+}
+
+.video video {
     max-width: 100%;
-  }
-  
-  .video .video-placeholder {
+}
+
+.video .video-placeholder {
     width: 100%;
     aspect-ratio: 16 / 9;
     position: relative;
-  }
-  
-  .video .video-placeholder > * {
+}
+
+.video .video-placeholder > * {
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     inset: 0;
-  }
-  
-  .video[data-embed-loaded='true'] .video-placeholder,
-  .video[data-embed-loaded='false'] .video-placeholder + * {
+    padding: 8px;
+}
+
+.video[data-embed-loaded='true'] .video-placeholder,
+.video[data-embed-loaded='false'] .video-placeholder + * {
     visibility: hidden;
     height: 0;
     width: 0;
-  }
-  
-  .video .video-placeholder picture img {
+}
+
+.video .video-placeholder picture img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  .video .video-placeholder-play button {
+}
+
+.video .video-placeholder-play button {
     position: relative;
     display: block;
     width: 44px;
@@ -53,9 +54,9 @@
     border-radius: 50%;
     outline: 2px solid;
     padding: 0;
-  }
-  
-  .video .video-placeholder-play button::before {
+}
+
+.video .video-placeholder-play button::before {
     content: '';
     display: block;
     box-sizing: border-box;
@@ -68,4 +69,19 @@
     top: 50%;
     left: calc(50% + 2px);
     transform: translate(-50%, -50%);
-  }
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.video-wrapper {
+    flex: 1 1 48%;
+    max-width: 48%;
+    margin: 1%;
+    box-sizing: border-box;
+}
+
