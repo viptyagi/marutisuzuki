@@ -206,13 +206,13 @@
     ]
   },
   {
-    "id": "tab",
+    "id": "tabs",
     "fields": [
       {
         "component": "text",
-        "name": "tab",
+        "name": "tabs",
         "value": "",
-        "label": "Tab",
+        "label": "Tabs",
         "valueType": "string"
       }
     ]
