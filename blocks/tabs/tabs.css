@@ -1,54 +1,58 @@
-.tabs ul {
+.tabs .tabs-list {
     display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    list-style: none;
-}
+    gap: 0.5ch;
+    max-width: 100%;
+    font-size: var(--body-font-size-xs);
+    overflow-x: auto;
+  }
 
-.tabs li {
-    box-sizing: border-box;
-    border-bottom: 1px solid transparent;
-    cursor: pointer;
-}
+  @media (width >= 600px) {
+    .tabs .tabs-list {
+      font-size: var(--body-font-size-s);
+    }
+  }
 
-.tabs li button {
-    font-size: 14px;
-    font-weight: unset;
-    text-transform: uppercase;
-    padding: 1em 1.5em;
-    max-height: 3pc;
-    min-width: 3pc;
+  @media (width >= 900px) {
+    .tabs .tabs-list {
+      font-size: var(--body-font-size-m);
+    }
+  }
+
+  .tabs .tabs-list button {
+    flex: 0 0 max-content;
+    margin: 0;
+    border: 1px solid #dadada;
     border-radius: 0;
-    background: none;
-    color: black;
-}
+    padding: 0.5em;
+    background-color: var(--light-color);
+    color: initial;
+    font-weight: bold;
+    line-height: unset;
+    text-align: initial;
+    text-overflow: unset;
+    overflow: unset;
+    white-space: unset;
+    transition: background-color 0.2s;
+  }
 
-.tabs li button.active {
-    border: none;
-    background-color: #202020;
-    color: #fff;
-}
+  .tabs .tabs-list button p {
+    margin: 0;
+  }
 
-body.activity main {
-    grid-auto-flow: column;
-    grid-template-rows: auto auto min-content minmax(auto, 100%);
-    grid-template-areas:
-        "bread bread bread bread"
-        "hero hero hero hero"
-        "padleft left tabs padright"
-        "padleft left main padright";
-}
 
-body.activity main .tabs-container {
-    grid-area: tabs;
-    padding-bottom: 0;
-}
+  .tabs .tabs-list button[aria-selected='true'] {
+    border-bottom: 1px solid var(--background-color);
+    background-color: var(--background-color);
+    cursor: initial;
+  }
 
-body.activity main [data-tab] {
-    padding-top: 0;
-    padding-bottom: 0;
-}
+  .tabs .tabs-panel {
+    margin-top: -1px;
+    padding: 24px;
+    border: 1px solid #dadada;
+    overflow: auto;
+  }
 
-body.activity main [data-tab] :first-child {
-    margin-top: 0;
-}
+  .tabs .tabs-panel[aria-hidden='true'] {
+    display: none;
+  }
