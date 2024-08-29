@@ -2,7 +2,8 @@
   {
     "id": "main",
     "components": [
-      "section"
+      "section",
+      "tab"
     ]
   },
   {
@@ -32,7 +33,6 @@
       "columns",
       "carousel",
       "video",
-      "tabs",
       "slide"
     ]
   },
