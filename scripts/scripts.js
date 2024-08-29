@@ -15,7 +15,7 @@ import {
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
 /**
- * Moves all the attributes from a given elmenet to another given element.
+ * Moves all the attributes from a given element to another given element.
  * @param {Element} from the element to copy attributes from
  * @param {Element} to the element to copy attributes to
  */
@@ -49,7 +49,7 @@ export function moveInstrumentation(from, to) {
 }
 
 /**
- * load fonts.css and set a session storage flag
+ * Load fonts.css and set a session storage flag
  */
 async function loadFonts() {
   await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
@@ -61,22 +61,12 @@ async function loadFonts() {
 }
 
 /**
- * Builds all synthetic blocks in a container element.
+ * Builds tabs from sections in the main container.
  * @param {Element} main The container element
  */
-function buildAutoBlocks() {
-  try {
-    // TODO: add auto block, if needed
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error('Auto Blocking failed', error);
-  }
-}
-
 function buildTabs(main) {
   const tabs = [...main.querySelectorAll(':scope > div')]
     .map((section) => {
-      // section metadata not yet parsed
       const sectionMeta = section.querySelector('div.section-metadata');
       if (sectionMeta) {
         const meta = readBlockConfig(sectionMeta);
@@ -102,12 +92,23 @@ function buildTabs(main) {
 }
 
 /**
+ * Builds all synthetic blocks in a container element.
+ * @param {Element} main The container element
+ */
+function buildAutoBlocks(main) {
+  try {
+    buildTabs(main);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Auto Blocking failed', error);
+  }
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
-// eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
-  // hopefully forward compatible button decoration
   decorateButtons(main);
   decorateIcons(main);
   buildAutoBlocks(main);
@@ -167,9 +168,7 @@ async function loadLazy(doc) {
  * without impacting the user experience.
  */
 function loadDelayed() {
-  // eslint-disable-next-line import/no-cycle
   window.setTimeout(() => import('./delayed.js'), 3000);
-  // load anything that can be postponed to the latest here
   import('./sidekick.js').then(({ initSidekick }) => initSidekick());
 }
 
