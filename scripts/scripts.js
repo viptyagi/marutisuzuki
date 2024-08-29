@@ -10,6 +10,8 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
+  readBlockConfig,
+  buildBlock,
 } from './aem.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
