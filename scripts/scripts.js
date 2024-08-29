@@ -116,7 +116,7 @@ async function decorateTemplates(main) {
         await Promise.all([cssLoaded, decorationComplete]);
       } catch (error) {
         // eslint-disable-next-line no-console
-        console.log('failed to load block nexa-cars'`, error);
+        console.log('failed to load block nexa-cars', error);
       }
 }
 
