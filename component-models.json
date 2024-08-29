@@ -203,17 +203,17 @@
         "label": "Text",
         "valueType": "string"
       }
-      
+
     ]
   },
   {
-    "id": "tabs",
+    "id": "tab",
     "fields": [
       {
         "component": "text",
-        "name": "tabs",
+        "name": "tab",
         "value": "",
-        "label": "Tabs",
+        "label": "Tab",
         "valueType": "string"
       }
     ]
