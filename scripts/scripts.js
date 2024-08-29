@@ -93,7 +93,31 @@ export function decorateMain(main) {
  * @author ashishrajconcentrix
  */
 async function decorateTemplates(main) {
-  await import(`${window.hlx.codeBasePath}/blocks/nexa-cars/nexa-cars.js`);
+  const block = document.querySelector('main > div.section.nexa-cars');
+
+  try {
+        const cssLoaded = loadCSS(`${window.hlx.codeBasePath}/blocks/nexa-cars/nexa-cars.css`);
+        const decorationComplete = new Promise((resolve) => {
+          (async () => {
+            try {
+              const mod = await import(
+                `${window.hlx.codeBasePath}/blocks/nexa-cars/nexa-cars.js`
+              );
+              if (mod.default) {
+                await mod.default(block);
+              }
+            } catch (error) {
+              // eslint-disable-next-line no-console
+              console.log(`failed to load module for ${blockName}`, error);
+            }
+            resolve();
+          })();
+        });
+        await Promise.all([cssLoaded, decorationComplete]);
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(`failed to load block ${blockName}`, error);
+      }
 }
 
 /**
