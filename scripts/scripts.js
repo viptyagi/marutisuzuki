@@ -108,7 +108,7 @@ async function decorateTemplates(main) {
               }
             } catch (error) {
               // eslint-disable-next-line no-console
-              console.log(`failed to load module for ${blockName}`, error);
+              console.log('failed to load module for nexa-cars', error);
             }
             resolve();
           })();
@@ -116,7 +116,7 @@ async function decorateTemplates(main) {
         await Promise.all([cssLoaded, decorationComplete]);
       } catch (error) {
         // eslint-disable-next-line no-console
-        console.log(`failed to load block ${blockName}`, error);
+        console.log('failed to load block nexa-cars'`, error);
       }
 }
 
