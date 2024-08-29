@@ -73,6 +73,47 @@ function buildAutoBlocks() {
   }
 }
 
+function buildTabs(main) {
+  const tabs = [...main.querySelectorAll(':scope > div')]
+    .map((section) => {
+      // section metadata not yet parsed
+      const sectionMeta = section.querySelector('div.section-metadata');
+      if (sectionMeta) {
+        const meta = readBlockConfig(sectionMeta);
+        return [section, meta.tab];
+      }
+      return null;
+    })
+    .filter((el) => !!el);
+  if (tabs.length) {
+    const section = document.createElement('div');
+    section.className = 'section';
+    const ul = document.createElement('ul');
+    ul.append(...tabs
+      .map(([, tab]) => {
+        const li = document.createElement('li');
+        li.innerText = tab;
+        return li;
+      }));
+    const tabsBlock = buildBlock('tabs', [[ul]]);
+    section.append(tabsBlock);
+    tabs[0][0].insertAdjacentElement('beforebegin', section);
+  }
+}
+
+/**
+ * Builds all synthetic blocks in a container element.
+ * @param {Element} main The container element
+ */
+function buildAutoBlocks(main) {
+  try {
+    buildTabs(main);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Auto Blocking failed', error);
+  }
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
