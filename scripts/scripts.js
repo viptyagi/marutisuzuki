@@ -90,9 +90,15 @@ export function decorateMain(main) {
 /**
  * Run template specific decoration code.
  * @param {Element} main The container element
+ * @author ashishrajconcentrix
  */
 async function decorateTemplates(main) {
-  await import(`${window.hlx.codeBasePath}/blocks/nexa-cars/nexa-cars.js`);
+  const decorator = await import(`${window.hlx.codeBasePath}/blocks/nexa-cars/nexa-cars.js`)
+    .then((mod) => mod.default);
+
+  if (decorator) {
+    await decorator(main);
+  }
 }
 
 /**
