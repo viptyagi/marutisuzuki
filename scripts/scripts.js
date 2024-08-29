@@ -93,12 +93,7 @@ export function decorateMain(main) {
  * @author ashishrajconcentrix
  */
 async function decorateTemplates(main) {
-  const decorator = await import(`${window.hlx.codeBasePath}/blocks/nexa-cars/nexa-cars.js`)
-    .then((mod) => mod.default);
-
-  if (decorator) {
-    await decorator(main);
-  }
+  await import(`${window.hlx.codeBasePath}/blocks/nexa-cars/nexa-cars.js`);
 }
 
 /**
