@@ -635,8 +635,6 @@ async function loadBlock(block) {
   if (status !== 'loading' && status !== 'loaded') {
     block.dataset.blockStatus = 'loading';
     const { blockName } = block.dataset;
-    console.log('block dataset :', block.dataset);
-    console.log('block name :', blockName);
     try {
       const cssLoaded = loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`);
       const decorationComplete = new Promise((resolve) => {
@@ -684,7 +682,6 @@ async function loadBlocks(main) {
  * @param {Element} block The block element
  */
 function decorateBlock(block) {
-  console.log('block :', block);
   const shortBlockName = block.classList[0];
   if (shortBlockName && !block.dataset.blockStatus) {
     block.classList.add('block');
