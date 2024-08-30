@@ -123,16 +123,14 @@
   text-decoration: none;
 }
 
-.nexa-cars .columns .grid .car .button-container:first-of-type {
+.nexa-cars .columns .grid .car .button-container {
   display: inline-block;
   margin: auto 5px auto 10px;
   width: 45%;
 }
 
 .nexa-cars .columns .grid .car .button-container:last-of-type {
-  display: inline-block;
   margin: auto 10px auto 5px;
-  width: 45%;
 }
 
 .nexa-cars .columns .grid .car .button-container a {
