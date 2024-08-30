@@ -72,7 +72,9 @@ async function loadFonts() {
        const sectionMeta = section.querySelector('div.section-metadata');
        if (sectionMeta) {
          const meta = readBlockConfig(sectionMeta);
-         return [section, meta.tab];
+         if (meta.tab) {
+          return [section, meta.tab];
+         }
        }
        return null;
      })
@@ -97,12 +99,9 @@ async function loadFonts() {
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks() {
-  if (meta.tab) {
-    [section, meta.tab];
- }
+function buildAutoBlocks(main) {
   try {
-     // to do
+     buildTabs(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
