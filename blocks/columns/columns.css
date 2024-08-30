@@ -97,6 +97,28 @@
   margin-left: 20px;
 }
 
+.nexa-cars .columns .grid .car .downloadIcon {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.nexa-cars .columns .grid .car .downloadBrochure a {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  padding: 0;
+  margin: 0;
+  width: 100px;
+  white-space: break-spaces;
+}
+
+.nexa-cars .columns .grid .car .downloadIcon a:hover {
+  text-decoration: none;
+}
+
 .nexa-cars .columns .grid .car .button-container:nth-of-type(1) {
   display: inline-block;
   margin: auto 5px auto 10px;
@@ -120,28 +142,6 @@
   display: inline-block;
   margin: auto 10px auto 5px;
   width: 45%;
-}
-
-.nexa-cars .columns .grid .car .downloadIcon {
-  display: inline-block;
-  margin-left: 10px;
-  width: 70px;
-}
-
-.nexa-cars .columns .grid .car .downloadIcon a {
-  background: none;
-  border: none;
-  color: black;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 16px;
-  padding: 0;
-  margin: 0;
-  white-space: break-spaces;
-}
-
-.nexa-cars .columns .grid .car .downloadIcon a:hover {
-  text-decoration: none;
 }
 
 @media (width>= 768px) {
