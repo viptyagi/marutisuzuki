@@ -5,10 +5,11 @@ export default function decorate(block) {
   const columns = div.children[1];
   const grid = columns.children[0].children[0];
   [...grid.children].forEach((row) => {
-      row[0].className = 'price';
-      row[1].className = 'showroom';
-      row[2].className = 'modelName';
-      row[3].className = 'downloadIcon';
-      row[4].className = 'downloadBrochure';
+      console.log('row :', row);
+      row.children[0].className = 'price';
+      row.children[1].className = 'showroom';
+      row.children[2].className = 'modelName';
+      row.children[3].className = 'downloadIcon';
+      row.children[4].className = 'downloadBrochure';
   });
 }
