@@ -4,8 +4,9 @@ export default function decorate(block) {
   const div = document.querySelector('main > div.section.nexa-cars');
   const columns = div.children[1];
   const grid = columns.children[0].children[0];
+  grid.className = 'grid';
   [...grid.children].forEach((row) => {
-      console.log('row :', row);
+      row.className = 'car';
       row.children[0].className = 'modelImage';
       row.children[1].className = 'price';
       row.children[2].className = 'showroom';

@@ -39,52 +39,71 @@
   font-weight: 700;
 }
 
-.nexa-cars .columns > div {
+.nexa-cars .columns .grid {
   display: grid;
 }
 
-.nexa-cars .columns > div > div {
+.nexa-cars .columns .grid .car {
   border-radius: 8px 8px 0 0;
   box-shadow: 0 0 10px 1px rgb(0 0 0 / 20%);
   position: relative;
 }
 
-.nexa-cars .columns > div > div > p:nth-of-type(2) img {
-  width: auto;
-}
-
-.nexa-cars .columns > div > div > p:nth-of-type(1) {
+.nexa-cars .columns .grid .car .modelImage {
   margin: 0;
   overflow: hidden;
 }
 
-.nexa-cars .columns > div > div > p:nth-of-type(1) img {
+.nexa-cars .columns .grid .car .modelImage img {
   border-radius: 8px 8px 0 0;
   transition: transform 0.5s ease;
 }
 
-.nexa-cars .columns > div > div > p:nth-of-type(1):hover img {
+.nexa-cars .columns .grid .car:hover .modelImage img {
   transform: scale(1.1);
 }
 
-.nexa-cars .columns > div > div > p:nth-of-type(2) {
+.nexa-cars .columns .grid .car .price {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.nexa-cars .columns .grid .car .showroom {
+  color: rgb(151 151 151);
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+  position: absolute;
+  left: 10px;
+  top: 30px;
+}
+
+.nexa-cars .columns .grid .car .modelName {
   display: inline-block;
   margin-left: 5px;
   width: 230px;
 }
 
-.nexa-cars .columns > div > div > p:nth-of-type(3) {
+.nexa-cars .columns .grid .car .modelName img {
+  width: auto;
+}
+
+.nexa-cars .columns .grid .car .downloadIcon {
   display: inline-block;
   margin-left: 20px;
 }
 
-.nexa-cars .columns > div > div > p:nth-of-type(4) {
+.nexa-cars .columns .grid .car .button-container:nth-of-type(1) {
   display: inline-block;
   margin: auto 5px auto 10px;
   width: 45%;
 }
 
-.nexa-cars .columns > div > div > p:nth-of-type(4) a, .nexa-cars .columns > div > div > p:nth-of-type(5) a {
+.nexa-cars .columns .grid .car .button-container a {
   font-size: 14px;
   font-weight: 500;
   padding: 5px 0;
@@ -92,43 +111,24 @@
   width: 100%;
 }
 
-.nexa-cars .columns > div > div > p:nth-of-type(4) a.button.secondary:hover {
+.nexa-cars .columns .grid .car .button-container:nth-of-type(1) a.button.secondary:hover {
   background-color: black;
   color: white;
 }
 
-.nexa-cars .columns > div > div > p:nth-of-type(5) {
+.nexa-cars .columns .grid .car .button-container:nth-of-type(2) {
   display: inline-block;
   margin: auto 10px auto 5px;
   width: 45%;
 }
 
-.nexa-cars .columns > div > div > div:nth-of-type(1) {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-}
-
-.nexa-cars .columns > div > div > div:nth-of-type(1) > p:nth-of-type(1) {
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.nexa-cars .columns > div > div > div:nth-of-type(1) > p:nth-of-type(2) {
-  color: rgb(151 151 151);
-  font-size: 13px;
-  font-weight: 500;
-  margin: 0;
-}
-
-.nexa-cars .columns > div > div > div:nth-of-type(2) {
+.nexa-cars .columns .grid .car .downloadIcon {
   display: inline-block;
   margin-left: 10px;
   width: 70px;
 }
 
-.nexa-cars .columns > div > div > div:nth-of-type(2) p a {
+.nexa-cars .columns .grid .car .downloadIcon a {
   background: none;
   border: none;
   color: black;
@@ -140,12 +140,12 @@
   white-space: break-spaces;
 }
 
-.nexa-cars .columns > div > div > div:nth-of-type(2) p a:hover {
+.nexa-cars .columns .grid .car .downloadIcon a:hover {
   text-decoration: none;
 }
 
 @media (width>= 768px) {
-  .nexa-cars .columns > div {
+  .nexa-cars .columns .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
