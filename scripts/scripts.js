@@ -10,8 +10,6 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
-  readBlockConfig,
-  buildBlock,
 } from './aem.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -66,32 +64,32 @@ async function loadFonts() {
  * Builds tabs from sections in the main container.
  * @param {Element} main The container element
  */
-function buildTabs(main) {
-  const tabs = [...main.querySelectorAll(':scope > div')]
-    .map((section) => {
-      const sectionMeta = section.querySelector('div.section-metadata');
-      if (sectionMeta) {
-        const meta = readBlockConfig(sectionMeta);
-        return [section, meta.tab];
-      }
-      return null;
-    })
-    .filter((el) => !!el);
-  if (tabs.length) {
-    const section = document.createElement('div');
-    section.className = 'section';
-    const ul = document.createElement('ul');
-    ul.append(...tabs
-      .map(([, tab]) => {
-        const li = document.createElement('li');
-        li.innerText = tab;
-        return li;
-      }));
-    const tabsBlock = buildBlock('tabs', [[ul]]);
-    section.append(tabsBlock);
-    tabs[0][0].insertAdjacentElement('beforebegin', section);
-  }
-}
+// function buildTabs(main) {
+//   const tabs = [...main.querySelectorAll(':scope > div')]
+//     .map((section) => {
+//       const sectionMeta = section.querySelector('div.section-metadata');
+//       if (sectionMeta) {
+//         const meta = readBlockConfig(sectionMeta);
+//         return [section, meta.tab];
+//       }
+//       return null;
+//     })
+//     .filter((el) => !!el);
+//   if (tabs.length) {
+//     const section = document.createElement('div');
+//     section.className = 'section';
+//     const ul = document.createElement('ul');
+//     ul.append(...tabs
+//       .map(([, tab]) => {
+//         const li = document.createElement('li');
+//         li.innerText = tab;
+//         return li;
+//       }));
+//     const tabsBlock = buildBlock('tabs', [[ul]]);
+//     section.append(tabsBlock);
+//     tabs[0][0].insertAdjacentElement('beforebegin', section);
+//   }
+// }
 
 /**
  * Builds all synthetic blocks in a container element.
@@ -99,7 +97,7 @@ function buildTabs(main) {
  */
 function buildAutoBlocks(main) {
   try {
-    buildTabs(main);
+     // to do
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
