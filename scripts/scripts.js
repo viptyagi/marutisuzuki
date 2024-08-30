@@ -75,9 +75,9 @@ async function loadFonts() {
          if (meta.tab) {
           return [section, meta.tab];
          }
-         if (meta.style) {
-          return [section, meta.style];
-         }
+        //  if (meta.style) {
+        //   return [section, meta.style];
+        //  }
        }
        return null;
      })
