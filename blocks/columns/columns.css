@@ -102,6 +102,10 @@
   margin-left: 10px;
 }
 
+.nexa-cars .columns .grid .car .downloadBrochure {
+ display: inline-block;
+}
+
 .nexa-cars .columns .grid .car .downloadBrochure a {
   background: none;
   border: none;
