@@ -209,6 +209,37 @@ function toCamelCase(name) {
 }
 
 /**
+ * Builds tabs from sections in the main container.
+ * @param {Element} main The container element
+ */
+function buildTabs(main) {
+  const tabs = [...main.querySelectorAll(':scope > div')]
+    .map((section) => {
+      const sectionMeta = section.querySelector('div.section-metadata');
+      if (sectionMeta) {
+        const meta = readBlockConfig(sectionMeta);
+        return [section, meta.tab];
+      }
+      return null;
+    })
+    .filter((el) => !!el);
+  if (tabs.length) {
+    const section = document.createElement('div');
+    section.className = 'section';
+    const ul = document.createElement('ul');
+    ul.append(...tabs
+      .map(([, tab]) => {
+        const li = document.createElement('li');
+        li.innerText = tab;
+        return li;
+      }));
+    const tabsBlock = buildBlock('tabs', [[ul]]);
+    section.append(tabsBlock);
+    tabs[0][0].insertAdjacentElement('beforebegin', section);
+  }
+}
+
+/**
  * Extracts the config from a block.
  * @param {Element} block The block element
  * @returns {object} The block config
