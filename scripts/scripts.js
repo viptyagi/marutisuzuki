@@ -92,9 +92,8 @@ export function decorateMain(main) {
  * @param {Element} main The container element
  * @author ashishrajconcentrix
  */
-async function decorateTemplates(main) {
+async function decorateTemplates() {
   const block = document.querySelector('main > div.section.nexa-cars');
-
   try {
         const cssLoaded = loadCSS(`${window.hlx.codeBasePath}/blocks/nexa-cars/nexa-cars.css`);
         const decorationComplete = new Promise((resolve) => {
