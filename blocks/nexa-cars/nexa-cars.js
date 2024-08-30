@@ -1,4 +1,4 @@
-consle.lg('nexa-cars.js loading...')
+console.lg('nexa-cars.js loading...');
 
 export default function decorate(block) {
   const div = document.querySelector('main > div.section.nexa-cars');
