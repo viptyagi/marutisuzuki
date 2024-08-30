@@ -74,6 +74,8 @@ async function loadFonts() {
          const meta = readBlockConfig(sectionMeta);
          if (meta.tab) {
           return [section, meta.tab];
+         } else if (meta.style) {
+          return [section, meta.style];
          }
        }
        return null;
