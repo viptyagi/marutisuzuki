@@ -3,30 +3,30 @@
   flex-wrap: wrap;
   padding-left: 0;
   list-style: none;
+  justify-content: center;
 }
 
 .tabs li {
   box-sizing: border-box;
   border-bottom: 1px solid transparent;
   cursor: pointer;
+  padding: .5rem;
 }
 
 .tabs li button {
   font-size: 14px;
-  font-weight: unset;
   text-transform: uppercase;
   padding: 1em 1.5em;
   max-height: 3pc;
   min-width: 3pc;
   border-radius: 0;
   background: none;
-  color: black;
+  color: rgba(0,0,0,.4);
 }
 
 .tabs li button.active {
   border: none;
-  background-color: #202020;
-  color: #fff;
+  color: #000;
 }
 
 body.activity main {
