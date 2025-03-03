@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 console.log('nexa-cars.js loading...');
 
-export default function decorate() { // Removed `_block` since it's unused
+export default function decorate() {
   const div = document.querySelector('main > div.section.nexa-cars');
-  if (!div) return; 
+  if (!div) return;
 
   const columns = div.children[1];
   if (!columns) return;
@@ -14,7 +14,9 @@ export default function decorate() { // Removed `_block` since it's unused
   grid.className = 'grid';
 
   [...grid.children].forEach((row) => {
-    if (row.children.length < 6) return;
+    if (row.children.length < 6) {
+      return;
+    }
 
     row.className = 'car';
     row.children[0].className = 'modelImage';
