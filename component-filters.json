@@ -71,6 +71,9 @@
       "columns",
       "quote"
      ]
+  },
+  {
+    "id": "accordion",
+    "components": ["accordion"]
   }
-  
 ]
