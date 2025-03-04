@@ -10,7 +10,7 @@
   box-sizing: border-box;
   border-bottom: 1px solid transparent;
   cursor: pointer;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .tabs li button {
@@ -21,7 +21,7 @@
   min-width: 3pc;
   border-radius: 0;
   background: none;
-  color: rgba(0,0,0,.4);
+  color: rgb(0 0 0 / 40%); /* Updated alpha value notation */
 }
 
 .tabs li button.active {
@@ -33,10 +33,10 @@ body.activity main {
   grid-auto-flow: column;
   grid-template-rows: auto auto min-content minmax(auto, 100%);
   grid-template-areas:
-      "bread bread bread bread"
-      "hero hero hero hero"
-      "padleft left tabs padright"
-      "padleft left main padright";
+    "bread bread bread bread"
+    "hero hero hero hero"
+    "padleft left tabs padright"
+    "padleft left main padright";
 }
 
 body.activity main .tabs-container {
