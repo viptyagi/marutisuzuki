@@ -206,8 +206,8 @@
                 "template": {
                   "name": "Accordion",
                   "model": "accordion",
-                  "heading": "Lorem ipsum",
-                  "body": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+                  "heading": "This is accordion",
+                  "body": "Maruti Suzuki - the adventurous ADAS car."
                 }
               }
             }
