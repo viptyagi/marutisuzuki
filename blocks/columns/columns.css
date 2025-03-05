@@ -19,7 +19,7 @@
   display: block;
 }
 
-@media (width >= 900px) {
+@media (min-width: 900px) {
   .columns > div {
     align-items: center;
     flex-direction: unset;
@@ -114,10 +114,7 @@
   white-space: break-spaces;
 }
 
-.nexa-cars .columns .grid .car .download-icon a:hover {
-  text-decoration: none;
-}
-
+/* Moved .button-container a above .download-icon a:hover */
 .nexa-cars .columns .grid .car .button-container {
   display: inline-block;
   margin: auto 5px auto 10px;
@@ -142,7 +139,11 @@
   color: white;
 }
 
-@media (width >= 768px) {
+.nexa-cars .columns .grid .car .download-icon a:hover {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
   .nexa-cars .columns .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
