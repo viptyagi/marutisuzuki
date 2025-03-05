@@ -49,17 +49,21 @@
   position: relative;
 }
 
-.nexa-cars .columns .grid .car .modelImage {
+.nexa-cars .columns .grid .car .model-image {
   margin: 0;
   overflow: hidden;
 }
 
-.nexa-cars .columns .grid .car .modelImage img {
+.nexa-cars .columns .grid .car .model-name img {
+  width: auto;
+}
+
+.nexa-cars .columns .grid .car .model-image img {
   border-radius: 8px 8px 0 0;
   transition: transform 0.5s ease;
 }
 
-.nexa-cars .columns .grid .car:hover .modelImage img {
+.nexa-cars .columns .grid .car:hover .model-image img {
   transform: scale(1.1);
 }
 
@@ -82,31 +86,22 @@
   top: 30px;
 }
 
-.nexa-cars .columns .grid .car .modelName {
+.nexa-cars .columns .grid .car .model-name {
   display: inline-block;
   margin-left: 5px;
   width: 230px;
 }
 
-.nexa-cars .columns .grid .car .modelName img {
-  width: auto;
-}
-
-.nexa-cars .columns .grid .car .downloadIcon {
-  display: inline-block;
-  margin-left: 20px;
-}
-
-.nexa-cars .columns .grid .car .downloadIcon {
+.nexa-cars .columns .grid .car .download-icon {
   display: inline-block;
   margin-left: 10px;
 }
 
-.nexa-cars .columns .grid .car .downloadBrochure {
- display: inline-block;
+.nexa-cars .columns .grid .car .download-brochure {
+  display: inline-block;
 }
 
-.nexa-cars .columns .grid .car .downloadBrochure a {
+.nexa-cars .columns .grid .car .download-brochure a {
   background: none;
   border: none;
   color: black;
@@ -119,7 +114,7 @@
   white-space: break-spaces;
 }
 
-.nexa-cars .columns .grid .car .downloadIcon a:hover {
+.nexa-cars .columns .grid .car .download-icon a:hover {
   text-decoration: none;
 }
 
@@ -141,12 +136,13 @@
   width: 100%;
 }
 
-.nexa-cars .columns .grid .car .button-container:nth-of-type(1) a.button.secondary:hover {
+.nexa-cars .columns .grid .car .button-container:nth-of-type(1) 
+  a.button.secondary:hover {
   background-color: black;
   color: white;
 }
 
-@media (width>= 768px) {
+@media (width >= 768px) {
   .nexa-cars .columns .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
