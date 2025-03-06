@@ -34,7 +34,8 @@
       "carousel",
       "video",
       "slide",
-      "tab"
+      "tab",
+      "accordion"
     ]
   },
   {
@@ -61,6 +62,10 @@
   },
   {
     "id": "accordion",
-    "components": ["accordion"]
+    "components": [
+      "accordion",
+      "text",
+      "button"
+    ]
   }
 ]
