@@ -55,9 +55,12 @@
       "columns",
       "quote",
       "accordion",
-      "embed",
       "video",
-      "carousel"
+      "carousel",
+      "form",
+      "columns",
+      "slide",
+      "tab"
     ]
   },
   {
