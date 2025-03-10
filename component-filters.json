@@ -35,7 +35,8 @@
       "video",
       "slide",
       "tab",
-      "accordion"
+      "accordion",
+      "embed"
     ]
   },
   {
@@ -77,6 +78,13 @@
     "id": "accordion",
     "components": [
       "accordion",
+      "text",
+      "button"
+    ]
+  },
+  {
+   "id": "embed",
+    "components": [
       "text",
       "button"
     ]
