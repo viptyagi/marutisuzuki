@@ -308,18 +308,18 @@
     "id": "embed",
     "fields": [
       {
-        "component": "reference",
-        "valueType": "string",
-        "name": "embed_placeholder",
-        "label": "Placeholder Image",
+        "component": "media",
+        "valueType": "video",
+        "name": "embed_video",
+        "label": "Upload Video",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "embed_placeholderAlt",
+        "name": "embed_videoAlt",
         "value": "",
-        "label": "Placeholder Image Alt Text"
+        "label": "Video Alt Text"
       },
       {
         "component": "text",
@@ -328,5 +328,5 @@
         "label": "URI"
       }
     ]
-  }
+}
 ]
