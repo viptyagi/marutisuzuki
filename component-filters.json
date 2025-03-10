@@ -84,9 +84,6 @@
   },
   {
    "id": "embed",
-    "components": [
-      "text",
-      "button"
-    ]
+    "components": []
   }
 ]
