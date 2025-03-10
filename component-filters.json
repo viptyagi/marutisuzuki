@@ -22,24 +22,6 @@
     ]
   },
   {
-    "id": "section",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title",
-      "hero",
-      "cards",
-      "columns",
-      "carousel",
-      "video",
-      "slide",
-      "tab",
-      "accordion",
-      "embed"
-    ]
-  },
-  {
     "id": "cards",
     "components": [
       "card",
@@ -73,7 +55,9 @@
       "columns",
       "quote",
       "accordion",
-      "embed"
+      "embed",
+      "video",
+      "carousel"
     ]
   },
   {
