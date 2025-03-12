@@ -82,5 +82,9 @@
   {
     "id": "form",
     "components": []
+  },
+  {
+    "id": "teaser",
+    "components": []
   }
 ]
