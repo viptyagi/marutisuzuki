@@ -61,7 +61,8 @@
       "columns",
       "slide",
       "tab",
-      "teaser"
+      "teaser",
+      "commerce-checkout"
     ]
   },
   {
@@ -85,6 +86,10 @@
   },
   {
     "id": "teaser",
+    "components": []
+  },
+  {
+    "id": "commerce-checkout",
     "components": []
   }
 ]

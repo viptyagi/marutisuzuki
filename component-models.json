@@ -420,5 +420,18 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "commerce-checkout",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "placeholder",
+        "label": "Placeholder",
+        "value": "No configs for Commerce Checkout",
+        "readOnly": true
+      }
+    ]
   }
 ]
