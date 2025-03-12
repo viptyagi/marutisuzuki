@@ -835,7 +835,6 @@ export default async function decorate(block) {
 
     window.history.pushState({}, '', url);
 
-
     await displayOrderConfirmation(orderData);
   };
 
